@@ -33,3 +33,24 @@ create table Book (
 );
 
 select * from book;
+
+
+
+
+create table IdStrategy (
+	id		BigInt		primary key AUTO_INCREMENT,
+	name	varchar(100)	not null
+)auto_increment = 1001;
+
+select * from IdStrategy;
+
+create table hotel_room (
+	id			BigInt		primary key auto_increment,
+	room_num	Int			not null,
+	name		Varchar(50)	not null,
+	capacity	Int			not null,
+	price		Double		not null,
+	intro		Text		not null
+);
+
+select * from hotel_room;
