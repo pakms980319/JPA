@@ -52,3 +52,40 @@ CREATE TABLE EngmanMember (
 )auto_increment=1501;
 
 select * from engmanmember;
+
+-- --------------------------------------------------- 
+-- 240224 
+create table ExamUser1 (
+	id			BIGINT			primary key auto_increment,
+	email		VARCHAR(50)		not null,
+	passwd		VARCHAR(60) 	not null,
+	name		VARCHAR(10)		not null,
+	phone		VARCHAR(11)		not null,
+	address1	VARCHAR(20)		not null,
+	address2	VARCHAR(60)		not null,
+	postalCode	vARCHAR(5)		not null
+) auto_increment = 1501;
+
+select * from EXAMUSER1;
+
+
+
+
+create table ExamUser (
+	id			BIGINT			primary key auto_increment,
+	email		VARCHAR(50)		not null,
+	passwd		VARCHAR(60) 	not null,
+	name		VARCHAR(10)		not null,
+	phone		VARCHAR(11)		not null
+) auto_increment = 1501;
+
+create table ExamAddress (
+	userId		BIGINT			not null,
+	address1	VARCHAR(20)		not null,
+	address2	VARCHAR(60)		not null,
+	postalCode	vARCHAR(5)		not null,
+	constraint ExamAddress_userId_FK foreign key (userId) references ExamUser (id)
+)
+
+select * from EXAMUSER;
+select * from ExamAddress;
