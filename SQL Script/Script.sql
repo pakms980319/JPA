@@ -89,3 +89,31 @@ create table ExamAddress (
 
 select * from EXAMUSER;
 select * from ExamAddress;
+
+-- ========================================
+-- 2024-02-25
+
+-- ========================================
+-- LibraryMember
+-- ========================================
+create table LibraryMember (
+	email		varchar(30)		primary key,
+	name		varchar(20)		not null,
+	lendingAuth	bool			not null default true
+);
+
+-- ========================================
+-- LibraryCard
+-- ========================================
+create table LibraryCard (
+	cardNum		varchar(10)		primary key,
+	ownerEmail	varchar(30)		not null,
+	enabled		bool			not null default true,
+	expiryDate	Date			not null,
+	constraint LibraryCard_ownerEmail_FK foreign key(ownerEmail) references LibraryMember(email)
+);
+
+select * from LIBRARYCARD;
+select * from librarymember;
+
+-- ========================================
